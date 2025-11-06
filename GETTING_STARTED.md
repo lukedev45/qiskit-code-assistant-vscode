@@ -49,12 +49,12 @@ If successful, the status will change to display the model name
 If the spinning icon disappears and the status bar remains with the "No Model Selected" message then you may need to enter your API Token.
 
 1. In Visual Studio Code press `Cmd/Ctrl+Shift+P` to open the VS Code command palette
-1. Type `Qiskit`
-1. Select the **Qiskit Code Assistant: Set IBM Quantum API token** command
+2. Type `Qiskit`
+3. Select the **Qiskit Code Assistant: Set IBM Quantum API token** command
 
     ![api token command](docs/images/IBMQuantum_Set_API_Token.png)
 
-1. Paste the IQP API token copied earlier from IBM Quantum page and hit Enter.
+4. Paste the IQP API token copied earlier from IBM Quantum page and hit Enter.
 
     ![api token input](docs/images/IBMQuantum_Token_Input.png)
 
