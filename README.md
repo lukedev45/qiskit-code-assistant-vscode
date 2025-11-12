@@ -2,9 +2,7 @@
 
 Write and optimize Qiskit code with a generative AI code assistant powered by IBM **watson<span style="color:blue;">x</span>**.
 
-> This experimental feature is only available, as of today, to IBM Quantum premium users.
-  If you are not part IBM Quantum premium plan, you can still install this extension; however you will not be able to use the assistant.
-  The Qiskit Code Assistant is a beta release, subject to change.
+> This experimental feature is only available, as of today, to IBM Quantum premium plan users. If you are not part of an IBM Quantum premium plan, you can use the local version See [LOCAL_SETUP.md](LOCAL_SETUP.md) for instructions.
 
 **************
 
@@ -12,13 +10,13 @@ Increase quantum computing developer productivity and learn best practices for Q
 
 **************
 
-Make programming quantum computers even easier with Qiskit Code Assistant, a generative AI code assistant powered by IBM **watson<span style="color:blue;">x</span>**. Trained with approximately 370 million text tokens from Qiskit SDK v1.x, years of Qiskit code examples, and IBM Quantum features, Qiskit Code Assistant accelerates your quantum development workflow by offering LLM-generated suggestions based on [IBM Granite 3.3 8B](https://www.ibm.com/products/watsonx-ai/foundation-models) that incorporate the latest features and functionalities from IBM. And soon, Qiskit Code Assistant will be able to be used alongside Qiskit patterns building blocks for reusable code and workflow simplification.
+Make programming quantum computers even easier with Qiskit Code Assistant, a generative AI code assistant powered by IBM **watson<span style="color:blue;">x</span>**. Trained with millions of text tokens from Qiskit SDK v2.x, years of Qiskit code examples, and IBM Quantum features, Qiskit Code Assistant accelerates your quantum development workflow by offering LLM-generated suggestions based on [Mistral-Small-3.2-24B-Instruct-2506](https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506) that incorporate the latest features and functionalities from Qiskit and IBM Quantum.
 
 Qiskit is the open-source quantum SDK preferred by 69% of respondents to the Unitary Fund's Open Source Software Survey, with nearly 600,000 registered users to date. Now you can get the performance and stability of the Qiskit SDK with the added efficiency of Qiskit Code Assistant to streamline your workflow and optimize your quantum computing programs.
 
 ## Features
 
-* Accelerate Qiskit code generation by leveraging generative AI based on the `granite-3.3-8b-qiskit` model
+* Accelerate Qiskit code generation by leveraging generative AI based on the `mistral-small-3.2-24b-qiskit` model
 * Use abstract and specific prompts to generate recommendations
 * Manage code changes by reviewing, accepting, and rejecting suggestions
 * Supports Python code files
@@ -39,13 +37,15 @@ Use `Ctrl+.` with code to obtain specific model-generated suggestions for code c
 
 ![Example prompt for quasi-dists](https://raw.githubusercontent.com/Qiskit/qiskit-code-assistant-vscode/main/docs/gifs/coupling-map-svc.gif)
 
-## Get started
+## Get Started
 
-### Obtain your IBM Quantum Cloud Platform API token
+### Option 1: IBM Quantum Cloud (Recommended)
+
+#### Obtain your IBM Quantum Cloud Platform API token
 
 Open the [IBM Quantum Platform](https://quantum.cloud.ibm.com/) in your browser and log in with your IBM Quantum account. After logging in, an IBM Quantum API token is displayed on the upper right side of the web page.
 
-### Set the API token in VS Code
+#### Set the API token in VS Code
 
 Press `Cmd/Ctrl+Shift+P` to open the VS Code command palette.
 
@@ -53,11 +53,26 @@ Type `Qiskit Code Assistant: Set IBM Quantum API token`.
 
 Paste your IBM Quantum API token in the pop-up dialog and press `Enter`.
 
-### Accept the model disclaimer/EULA
+#### Managing Multiple Credentials
 
-By default, the model you will use is `granite-3.3-8b-qiskit`. It will appear in the Model Picker in the bottom of the status bar.
+If you have multiple IBM Quantum credentials configured in your `~/.qiskit/qiskit-ibm.json` file (e.g., for different environments like production and development), the extension will automatically prompt you to select which credential to use when it starts. You can choose to select one from the file, enter a token manually, or dismiss the prompt to use automatic selection. See [credentials_selection.md](docs/credentials_selection.md) for detailed instructions.
 
-The first time you use the `granite-3.3-8b-qiskit` model, a model disclaimer/EULA will appear with information about the model and links to documentation and the model's license. It will also list some restrictions that you should be aware of when using the model, including a restriction against using proprietary code. Clicking `Accept` will enable the new model during code generation.
+#### Accept the model disclaimer/EULA
+
+By default, the model you will use is `mistral-small-3.2-24b-qiskit`. It will appear in the Model Picker in the bottom of the status bar.
+
+The first time you use the `mistral-small-3.2-24b-qiskit` model, a model disclaimer/EULA will appear with information about the model and links to documentation and the model's license. It will also list some restrictions that you should be aware of when using the model, including a restriction against using proprietary code. Clicking `Accept` will enable the new model during code generation.
+
+### Option 2: Local Setup (For non-premium users)
+
+Run the one-line installer:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Qiskit/qiskit-code-assistant-vscode/main/setup_local.sh)
+```
+
+See [LOCAL_SETUP.md](LOCAL_SETUP.md) for detailed instructions.
+
 
 ### Generate code suggestions
 

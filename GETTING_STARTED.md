@@ -1,9 +1,16 @@
-# Gettting Started with the Qiskit Code Assistant
+# Getting Started with the Qiskit Code Assistant
+
+> **Looking to run locally?** Check out [LOCAL_SETUP.md](LOCAL_SETUP.md) for a free, private, offline setup using your own computer!
+
+This guide covers setting up the Qiskit Code Assistant through IBM Quantum Cloud Platform. For local deployment options, see [LOCAL_SETUP.md](LOCAL_SETUP.md).
 
 ## Requirements
 
 - Visual Studio Code
-- An IBM Quantum premium account
+- Access to either:
+  - An IBM Quantum premium plan user account
+  - A local LLM service (see [LOCAL_SETUP.md](LOCAL_SETUP.md))
+  - A service exposing LLMs using OpenAI-compatible API endpoints
 
 ## Install
 
@@ -22,7 +29,7 @@ To remove the extension
 1. Select the **Qiskit Code Assistant** extension under the **INSTALLED** section
 1. Click **Uninstall**
 
-## Using the Qiskit Code Assistant
+## Using the Qiskit Code Assistant through IBM Quantum Cloud Platform (recommended)
 
 ### IBM Quantum API Token
 
@@ -60,11 +67,11 @@ If the spinning icon disappears and the status bar remains with the "No Model Se
 
 ### Accepting the model disclaimer
 
-By default, the extension will use the `granite-3.3-8b-qiskit` model. It will appear in the Model Picker in the bottom status bar.
+By default, the extension will use the `mistral-small-3.2-24b-qiskit` model. It will appear in the Model Picker in the bottom status bar.
 
 ![selected model](docs/images/Selected_Model.png)
 
-The first time you use the `granite-3.3-8b-qiskit` model a model info view will open and explain a little about the model with links to documentation and the model's license. It will also list some major restrictions that you should be aware of when using the model. Clicking `Accept` will accept the model disclaimer and enable the model for code generation.
+The first time you use the `mistral-small-3.2-24b-qiskit` model a model info view will open and explain a little about the model with links to documentation and the model's license. It will also list some major restrictions that you should be aware of when using the model. Clicking `Accept` will accept the model disclaimer and enable the model for code generation.
 
 ![model disclaimer](docs/images/Model_Disclaimer.png)
 
